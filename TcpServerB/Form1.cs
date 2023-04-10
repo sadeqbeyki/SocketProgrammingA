@@ -1,5 +1,6 @@
 using SuperSimpleTcp;
 using System.Text;
+using System.Windows.Forms;
 
 namespace TcpServerB
 {
@@ -29,29 +30,39 @@ namespace TcpServerB
 
         private void Events_DataReceived(object? sender, DataReceivedEventArgs e)
         {
-            tbInfo.Text += $"{e.IpPort}:{Encoding.UTF8.GetString(e.Data)}{Environment.NewLine}";
+            this.Invoke((MethodInvoker)delegate
+            {
+                tbInfo.Text += $"{e.IpPort}:{Encoding.UTF8.GetString(e.Data)}{Environment.NewLine}";
+            });
         }
 
         private void Events_ClientDisconnected(object? sender, ConnectionEventArgs e)
         {
-            tbInfo.Text += $"{e.IpPort} disconnected.{Environment.NewLine}";
-            lstClientIp.Items.Remove(e.IpPort);
+            this.Invoke((MethodInvoker)delegate
+            {
+                tbInfo.Text += $"{e.IpPort} disconnected.{Environment.NewLine}";
+                lstClientIp.Items.Remove(e.IpPort);
+            });
         }
 
         private void Events_ClientConnected(object? sender, ConnectionEventArgs e)
         {
-            tbInfo.Text += $"{e.IpPort} connected.{Environment.NewLine}";
-            lstClientIp.Items.Add(e.IpPort);
+            this.Invoke((MethodInvoker)delegate
+            {
+                tbInfo.Text += $"{e.IpPort} connected.{Environment.NewLine}";
+                lstClientIp.Items.Add(e.IpPort);
+            });
+
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
             //chk message and select client ip from listbox
-            if(!string.IsNullOrEmpty(tbInfo.Text)&&lstClientIp.SelectedItems!=null) 
+            if (!string.IsNullOrEmpty(tbInfo.Text) && lstClientIp.SelectedItems != null)
             {
-tcpServer.Send(lstClientIp.SelectedItems.ToString(),tbMessage.Text);
-                tbInfo.Text +=$"server : {tbMessage.Text}{Environment.NewLine}";
-                tbMessage.Text=string.Empty;
+                tcpServer.Send(lstClientIp.SelectedItems.ToString(), tbMessage.Text);
+                tbInfo.Text += $"server : {tbMessage.Text}{Environment.NewLine}";
+                tbMessage.Text = string.Empty;
             }
         }
     }

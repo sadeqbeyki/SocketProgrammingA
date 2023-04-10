@@ -45,6 +45,7 @@
             btnSend.TabIndex = 0;
             btnSend.Text = "&Send";
             btnSend.UseVisualStyleBackColor = true;
+            btnSend.Click += btnSend_Click;
             // 
             // label1
             // 
@@ -88,6 +89,7 @@
             btnConnect.TabIndex = 5;
             btnConnect.Text = "&Connect";
             btnConnect.UseVisualStyleBackColor = true;
+            btnConnect.Click += btnConnect_Click;
             // 
             // label2
             // 
@@ -113,6 +115,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Client";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
