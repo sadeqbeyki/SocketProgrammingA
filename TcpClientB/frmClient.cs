@@ -3,13 +3,13 @@ using System.Text;
 
 namespace TcpClientB
 {
-    public partial class Form1 : Form
+    public partial class frmClient : Form
     {
-        public Form1()
+        SimpleTcpClient tcpClient;
+        public frmClient()
         {
             InitializeComponent();
         }
-        SimpleTcpClient tcpClient;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -20,11 +20,19 @@ namespace TcpClientB
             btnSend.Enabled = false;
         }
 
+        private void Events_Connected(object? sender, ConnectionEventArgs e)
+        {
+            this.Invoke((MethodInvoker)delegate
+            {
+                tbInfo.Text += $"*** Server [{e.IpPort}] Connected.{Environment.NewLine}";
+            });
+        }
+
         private void Events_DataReceived(object? sender, DataReceivedEventArgs e)
         {
             this.Invoke((MethodInvoker)delegate
             {
-                tbInfo.Text += $"Server: {Encoding.UTF8.GetString(e.Data)}{Environment.NewLine}";
+                tbInfo.Text += $"*** Server: [{e.IpPort}] {Encoding.UTF8.GetString(e.Data.Array, 0, e.Data.Count)}{Environment.NewLine}";
             });
         }
 
@@ -32,15 +40,7 @@ namespace TcpClientB
         {
             this.Invoke((MethodInvoker)delegate
             {
-                tbInfo.Text += $"Server Disconnected.{Environment.NewLine}";
-            });
-        }
-
-        private void Events_Connected(object? sender, ConnectionEventArgs e)
-        {
-            this.Invoke((MethodInvoker)delegate
-            {
-                tbInfo.Text += $"Server Connected.{Environment.NewLine}";
+                tbInfo.Text += $"*** Server [{e.IpPort}] Disconnected.{Environment.NewLine}";
             });
         }
 
@@ -65,8 +65,9 @@ namespace TcpClientB
                 if (!string.IsNullOrEmpty(tbMessage.Text))
                 {
                     tcpClient.Send(tbMessage.Text);
-                    tbMessage.Text += $"Me:{tbMessage.Text}{Environment.NewLine}";
+                    tbInfo.Text += $"Me: {tbMessage.Text}{Environment.NewLine}";
                     tbMessage.Text = string.Empty;
+                    //tbMessage.Text = 
                 }
             }
         }

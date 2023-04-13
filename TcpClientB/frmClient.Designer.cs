@@ -1,6 +1,6 @@
 ﻿namespace TcpClientB
 {
-    partial class Form1
+    partial class frmClient
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,90 +29,94 @@
         private void InitializeComponent()
         {
             btnSend = new Button();
-            label1 = new Label();
+            lblServer = new Label();
             tbIP = new TextBox();
             tbInfo = new TextBox();
             tbMessage = new TextBox();
             btnConnect = new Button();
-            label2 = new Label();
+            lblMessage = new Label();
             SuspendLayout();
             // 
             // btnSend
             // 
-            btnSend.Location = new Point(304, 262);
+            btnSend.Location = new Point(388, 231);
             btnSend.Name = "btnSend";
-            btnSend.Size = new Size(75, 23);
+            btnSend.Size = new Size(84, 50);
             btnSend.TabIndex = 0;
             btnSend.Text = "&Send";
             btnSend.UseVisualStyleBackColor = true;
             btnSend.Click += btnSend_Click;
             // 
-            // label1
+            // lblServer
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(45, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Server :";
+            lblServer.AutoSize = true;
+            lblServer.Location = new Point(22, 15);
+            lblServer.Name = "lblServer";
+            lblServer.Size = new Size(45, 15);
+            lblServer.TabIndex = 1;
+            lblServer.Text = "Server :";
             // 
             // tbIP
             // 
-            tbIP.Location = new Point(78, 34);
+            tbIP.Location = new Point(73, 15);
             tbIP.Name = "tbIP";
-            tbIP.Size = new Size(382, 23);
+            tbIP.Size = new Size(250, 23);
             tbIP.TabIndex = 2;
             tbIP.Text = "127.0.0.1:9000";
             // 
             // tbInfo
             // 
-            tbInfo.Location = new Point(78, 65);
+            tbInfo.Location = new Point(22, 46);
             tbInfo.Multiline = true;
             tbInfo.Name = "tbInfo";
             tbInfo.ReadOnly = true;
             tbInfo.ScrollBars = ScrollBars.Both;
-            tbInfo.Size = new Size(382, 162);
+            tbInfo.Size = new Size(450, 162);
             tbInfo.TabIndex = 3;
             // 
             // tbMessage
             // 
-            tbMessage.Location = new Point(78, 233);
+            tbMessage.Location = new Point(22, 231);
+            tbMessage.Multiline = true;
             tbMessage.Name = "tbMessage";
-            tbMessage.Size = new Size(382, 23);
+            tbMessage.Size = new Size(369, 50);
             tbMessage.TabIndex = 4;
             // 
             // btnConnect
             // 
-            btnConnect.Location = new Point(385, 262);
+            btnConnect.Location = new Point(329, 15);
             btnConnect.Name = "btnConnect";
-            btnConnect.Size = new Size(75, 23);
+            btnConnect.Size = new Size(143, 23);
             btnConnect.TabIndex = 5;
             btnConnect.Text = "&Connect";
             btnConnect.UseVisualStyleBackColor = true;
             btnConnect.Click += btnConnect_Click;
             // 
-            // label2
+            // lblMessage
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 233);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 15);
-            label2.TabIndex = 6;
-            label2.Text = "Message :";
+            lblMessage.AutoSize = true;
+            lblMessage.Location = new Point(22, 213);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(59, 15);
+            lblMessage.TabIndex = 6;
+            lblMessage.Text = "Message :";
             // 
-            // Form1
+            // frmClient
             // 
+            AcceptButton = btnSend;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(485, 305);
-            Controls.Add(label2);
+            AutoSize = true;
+            ClientSize = new Size(484, 296);
+            Controls.Add(lblMessage);
             Controls.Add(btnConnect);
             Controls.Add(tbMessage);
             Controls.Add(tbInfo);
             Controls.Add(tbIP);
-            Controls.Add(label1);
+            Controls.Add(lblServer);
             Controls.Add(btnSend);
-            Name = "Form1";
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Name = "frmClient";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Client";
             Load += Form1_Load;
@@ -123,11 +127,11 @@
         #endregion
 
         private Button btnSend;
-        private Label label1;
+        private Label lblServer;
         private TextBox tbIP;
         private TextBox tbInfo;
         private TextBox tbMessage;
         private Button btnConnect;
-        private Label label2;
+        private Label lblMessage;
     }
 }
