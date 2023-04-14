@@ -7,9 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcpServerA", "TcpServer.A\T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcpClientA", "TcpClient.A\TcpClientA.csproj", "{BB490A79-4A3A-48CD-BB2C-9E219B3329B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpClientB", "TcpClientB\TcpClientB.csproj", "{CA839577-522D-4284-97AF-6094CFEE4935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcpClientB", "TcpClientB\TcpClientB.csproj", "{CA839577-522D-4284-97AF-6094CFEE4935}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpServerB", "TcpServerB\TcpServerB.csproj", "{A5F1AA1A-3DF5-47AF-9E05-9DFA6F86A11E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcpServerB", "TcpServerB\TcpServerB.csproj", "{A5F1AA1A-3DF5-47AF-9E05-9DFA6F86A11E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcpClientC", "TcpClientC\TcpClientC.csproj", "{DF6C9C6E-AF43-402A-BFC9-0275A432B81C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcpServerC", "TcpServerC\TcpServerC.csproj", "{C3298297-3CF5-4566-9670-603D2131FF66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpServerD", "TcpServerD\TcpServerD.csproj", "{FBB25A5B-9D51-409B-83B3-30AFFFAFDC72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{A5F1AA1A-3DF5-47AF-9E05-9DFA6F86A11E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F1AA1A-3DF5-47AF-9E05-9DFA6F86A11E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5F1AA1A-3DF5-47AF-9E05-9DFA6F86A11E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6C9C6E-AF43-402A-BFC9-0275A432B81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6C9C6E-AF43-402A-BFC9-0275A432B81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6C9C6E-AF43-402A-BFC9-0275A432B81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6C9C6E-AF43-402A-BFC9-0275A432B81C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3298297-3CF5-4566-9670-603D2131FF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3298297-3CF5-4566-9670-603D2131FF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3298297-3CF5-4566-9670-603D2131FF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3298297-3CF5-4566-9670-603D2131FF66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB25A5B-9D51-409B-83B3-30AFFFAFDC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB25A5B-9D51-409B-83B3-30AFFFAFDC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB25A5B-9D51-409B-83B3-30AFFFAFDC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB25A5B-9D51-409B-83B3-30AFFFAFDC72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
