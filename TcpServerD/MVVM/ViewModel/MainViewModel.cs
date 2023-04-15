@@ -59,7 +59,7 @@ namespace TcpServerD.MVVM.ViewModel
             {
                 Username="sadeq",
                 UsernameColor="#409aff",
-                ImageSource="https://i.imgur.com/yMWvLXd.png",
+                ImageSource= "https://i.postimg.cc/d3T4jSqF/images.jpg",
                 Message="test",
                 Time=DateTime.Now,
                 IsNativeOrigin=false,
@@ -72,7 +72,7 @@ namespace TcpServerD.MVVM.ViewModel
                 {
                     Username = "sadeq",
                     UsernameColor = "#409aff",
-                    ImageSource = "https://i.imgur.com/yMWvLXd.png",
+                    ImageSource = "https://i.postimg.cc/d3T4jSqF/images.jpg",
                     Message = "test",
                     Time = DateTime.Now,
                     IsNativeOrigin = false,
@@ -86,7 +86,7 @@ namespace TcpServerD.MVVM.ViewModel
                 {
                     Username = "sohrab",
                     UsernameColor = "#409aff",
-                    ImageSource = "https://i.imgur.com/yMWvLXd.png",
+                    ImageSource = "https://i.postimg.cc/d3T4jSqF/images.jpg",
                     Message = "test",
                     Time = DateTime.Now,
                     IsNativeOrigin = true,
